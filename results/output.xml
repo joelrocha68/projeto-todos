@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-13T23:16:50.778050" rpa="false" schemaversion="5">
+<suite id="s1" name="TodoSiteTests" source="/home/joel/Documentos/projeto-todos/tests/TodoSiteTests.robot">
+<test id="s1-t1" name="Cenário 1: Adicionar, marcar e filtrar todas as tarefas como concluidas" line="11">
+<kw name="Open Browser To Todo Site" owner="TodoSiteKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:51.181650" level="INFO">Opening browser 'chrome' to base url 'http://todomvc.com/examples/react/dist/#/'.</msg>
+<arg>${TODO_SITE_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--remote-debugging-port=9222");add_argument("--disable-gpu");add_argument("--headless=new")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-13T23:16:51.180934" elapsed="4.853682"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.035281" elapsed="0.022508"/>
+</kw>
+<doc>Abrir o navegador e acessar a url do site To-Do</doc>
+<status status="PASS" start="2025-11-13T23:16:51.179150" elapsed="4.879000"/>
+</kw>
+<kw name="Add Multiple Todo Items" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.062827" elapsed="0.058929"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:56.123098" level="INFO">Typing text 'Atividade 1' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.122341" elapsed="0.171032"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:56.294937" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:16:56.588639" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:16:56.588863" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.293942" elapsed="0.416192"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.061507" elapsed="0.648964"/>
+</kw>
+<var name="${item}">Atividade 1</var>
+<status status="PASS" start="2025-11-13T23:16:56.060959" elapsed="0.649664"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.712175" elapsed="0.053650"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:56.766991" level="INFO">Typing text 'Atividade 2' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.766343" elapsed="0.107648"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:56.875478" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:16:57.169940" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:16:57.170145" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.874528" elapsed="0.316402"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.711387" elapsed="0.479909"/>
+</kw>
+<var name="${item}">Atividade 2</var>
+<status status="PASS" start="2025-11-13T23:16:56.710937" elapsed="0.480511"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.193361" elapsed="0.026370"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:57.220926" level="INFO">Typing text 'Atividade 3' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.220219" elapsed="0.105432"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:57.327121" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:16:57.620688" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:16:57.620916" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.326149" elapsed="0.311489"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.192363" elapsed="0.445723"/>
+</kw>
+<var name="${item}">Atividade 3</var>
+<status status="PASS" start="2025-11-13T23:16:57.191809" elapsed="0.446499"/>
+</iter>
+<var>${item}</var>
+<value>@{items}</value>
+<status status="PASS" start="2025-11-13T23:16:56.060390" elapsed="1.578148"/>
+</for>
+<arg>Atividade 1</arg>
+<arg>Atividade 2</arg>
+<arg>Atividade 3</arg>
+<doc>Adiciona múltiplos itens de tarefa na lista.</doc>
+<status status="PASS" start="2025-11-13T23:16:56.059346" elapsed="1.579501"/>
+</kw>
+<kw name="Check Todo Item" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:16:57.641468" level="INFO">${locator} = xpath=//label[normalize-space()='Atividade 2']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_CHECKBOX_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.640742" elapsed="0.000814"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:16:57.643301" level="INFO">${xpath} = //label[normalize-space()='Atividade 2']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${xpath}</var>
+<arg>${locator}</arg>
+<arg>xpath=</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.641883" elapsed="0.001505"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.643728" elapsed="0.029596"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:57.675566" level="INFO">Executing JavaScript:
+var el=document.evaluate("//label[normalize-space()='Atividade 2']/preceding-sibling::input[@data-testid='todo-item-toggle']",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;if(el){el.click();}
+Without any arguments.</msg>
+<arg>var el=document.evaluate("${xpath}",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;if(el){el.click();}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.674012" elapsed="0.020842"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Checkbox da tarefa "${item_text}" marcado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.695375" elapsed="0.000647"/>
+</kw>
+<arg>Atividade 2</arg>
+<doc>Marca o checkbox de uma tarefa pelo seu texto.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.639841" elapsed="0.056419"/>
+</kw>
+<kw name="Filter Todos By Status" owner="TodoSiteKeywords">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'All'</arg>
+<arg>Click Element</arg>
+<arg>${FILTER_ALL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.698312" elapsed="0.000720"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'Active'</arg>
+<arg>Click Element</arg>
+<arg>${FILTER_ACTIVE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.699571" elapsed="0.000500"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:57.701683" level="INFO">Clicking element 'xpath=//ul[@data-testid='footer-navigation']//a[text()='Completed']'.</msg>
+<arg>${FILTER_COMPLETED}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.701100" elapsed="0.158101"/>
+</kw>
+<arg>'${status}' == 'Completed'</arg>
+<arg>Click Element</arg>
+<arg>${FILTER_COMPLETED}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.700475" elapsed="0.159078"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Filtrado por: ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.860038" elapsed="0.000751"/>
+</kw>
+<arg>Completed</arg>
+<doc>Filtra as tarefas pelo status: All, Active ou Completed.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.696937" elapsed="0.164099"/>
+</kw>
+<kw name="Assert Quantity Item Left" owner="TodoSiteKeywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-13T23:16:57.862963" level="INFO">${locator} = xpath=//span[@class='todo-count']</msg>
+<var>${locator}</var>
+<arg>${TODO_COUNT}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.862489" elapsed="0.000556"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.863385" elapsed="0.046623"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:57.956115" level="INFO">${actual_text} = 2 items left!</msg>
+<var>${actual_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.910574" elapsed="0.045730"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2025-11-13T23:16:57.958299" level="INFO">${actual_num} = 2 items left!</msg>
+<var>${actual_num}</var>
+<arg>${actual_text}</arg>
+<arg>\D</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.956735" elapsed="0.001647"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2025-11-13T23:16:57.960057" level="INFO">${expected_num} = 2 items left!</msg>
+<var>${expected_num}</var>
+<arg>${item_left}</arg>
+<arg>\D</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.958711" elapsed="0.001423"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_num}</arg>
+<arg>${expected_num}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.960470" elapsed="0.000511"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: ${actual_num} items left == ${expected_num}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.961303" elapsed="0.000599"/>
+</kw>
+<arg>2 items left!</arg>
+<doc>Verifica a quantidade de itens restantes.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.861718" elapsed="0.100366"/>
+</kw>
+<kw name="Assert Todo Items Are Visible" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Assert Todo Item Is Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:16:57.966008" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 2']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.965288" elapsed="0.000818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.966546" elapsed="0.041567"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:58.033390" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 2']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.008672" elapsed="0.024975"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.034091" elapsed="0.000655"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.964109" elapsed="0.070850"/>
+</kw>
+<var name="${item_text}">Atividade 2</var>
+<status status="PASS" start="2025-11-13T23:16:57.963677" elapsed="0.071406"/>
+</iter>
+<var>${item_text}</var>
+<value>@{item_texts}</value>
+<status status="PASS" start="2025-11-13T23:16:57.963202" elapsed="0.072004"/>
+</for>
+<arg>Atividade 2</arg>
+<doc>Verifica se TODOS os itens de tarefa na lista estão visíveis na página.</doc>
+<status status="PASS" start="2025-11-13T23:16:57.962659" elapsed="0.072750"/>
+</kw>
+<kw name="Assert Todo Items Are Not Visible" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:16:58.038890" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 1']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.038316" elapsed="0.000653"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.039298" elapsed="0.027407"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:58.080344" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 1']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.067530" elapsed="0.013102"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.081109" elapsed="0.000777"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.037550" elapsed="0.044640"/>
+</kw>
+<var name="${item_text}">Atividade 1</var>
+<status status="PASS" start="2025-11-13T23:16:58.037108" elapsed="0.045266"/>
+</iter>
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:16:58.084710" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 3']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.084087" elapsed="0.000708"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.085114" elapsed="0.026673"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:58.128814" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 3']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.112364" elapsed="0.016710"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.129581" elapsed="0.000702"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.083225" elapsed="0.047295"/>
+</kw>
+<var name="${item_text}">Atividade 3</var>
+<status status="PASS" start="2025-11-13T23:16:58.082755" elapsed="0.047894"/>
+</iter>
+<var>${item_text}</var>
+<value>@{item_texts}</value>
+<status status="PASS" start="2025-11-13T23:16:58.036692" elapsed="0.094084"/>
+</for>
+<arg>Atividade 1</arg>
+<arg>Atividade 3</arg>
+<doc>Verifica se NENHUM dos itens de tarefa na lista está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.035998" elapsed="0.094972"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.131630" elapsed="0.060133"/>
+</kw>
+<status status="PASS" start="2025-11-13T23:16:51.177431" elapsed="7.014662"/>
+</test>
+<test id="s1-t2" name="Cenário 2: Adicionar, marcar, excluir e filtrar todas as tarefas como concluidas" line="19">
+<kw name="Open Browser To Todo Site" owner="TodoSiteKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:16:58.197021" level="INFO">Opening browser 'chrome' to base url 'http://todomvc.com/examples/react/dist/#/'.</msg>
+<arg>${TODO_SITE_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--remote-debugging-port=9222");add_argument("--disable-gpu");add_argument("--headless=new")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-13T23:16:58.195965" elapsed="2.216067"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-13T23:17:00.412647" elapsed="0.023953"/>
+</kw>
+<doc>Abrir o navegador e acessar a url do site To-Do</doc>
+<status status="PASS" start="2025-11-13T23:16:58.194883" elapsed="2.242040"/>
+</kw>
+<kw name="Add Multiple Todo Items" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:00.440784" elapsed="0.059853"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:00.501892" level="INFO">Typing text 'Atividade 1' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:00.501125" elapsed="0.162632"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:00.665479" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:00.953764" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:00.953978" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:00.664338" elapsed="0.350448"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:00.439734" elapsed="0.575381"/>
+</kw>
+<var name="${item}">Atividade 1</var>
+<status status="PASS" start="2025-11-13T23:17:00.439166" elapsed="0.576113"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.017034" elapsed="0.107754"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:01.126101" level="INFO">Typing text 'Atividade 2' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.125329" elapsed="0.110094"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:01.236984" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:01.537379" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:01.537610" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.235948" elapsed="0.322664"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.016123" elapsed="0.542836"/>
+</kw>
+<var name="${item}">Atividade 2</var>
+<status status="PASS" start="2025-11-13T23:17:01.015646" elapsed="0.543475"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.561636" elapsed="0.024984"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:01.588066" level="INFO">Typing text 'Atividade 3' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.587273" elapsed="0.108015"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:01.696886" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:01.986715" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:01.986947" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.695836" elapsed="0.306687"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:01.560281" elapsed="0.442579"/>
+</kw>
+<var name="${item}">Atividade 3</var>
+<status status="PASS" start="2025-11-13T23:17:01.559541" elapsed="0.443467"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.004834" elapsed="0.027537"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:02.033619" level="INFO">Typing text 'Atividade 4' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.032876" elapsed="0.104365"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:02.138677" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:02.418463" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:02.418706" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.137755" elapsed="0.297847"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.003886" elapsed="0.432051"/>
+</kw>
+<var name="${item}">Atividade 4</var>
+<status status="PASS" start="2025-11-13T23:17:02.003390" elapsed="0.432689"/>
+</iter>
+<var>${item}</var>
+<value>@{items}</value>
+<status status="PASS" start="2025-11-13T23:17:00.438645" elapsed="1.997576"/>
+</for>
+<arg>Atividade 1</arg>
+<arg>Atividade 2</arg>
+<arg>Atividade 3</arg>
+<arg>Atividade 4</arg>
+<doc>Adiciona múltiplos itens de tarefa na lista.</doc>
+<status status="PASS" start="2025-11-13T23:17:00.437787" elapsed="1.998698"/>
+</kw>
+<kw name="Check Todo Item" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:02.438816" level="INFO">${locator} = xpath=//label[normalize-space()='Atividade 3']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_CHECKBOX_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.438127" elapsed="0.000784"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:02.440757" level="INFO">${xpath} = //label[normalize-space()='Atividade 3']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${xpath}</var>
+<arg>${locator}</arg>
+<arg>xpath=</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.439270" elapsed="0.001578"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.441206" elapsed="0.029293"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:02.472433" level="INFO">Executing JavaScript:
+var el=document.evaluate("//label[normalize-space()='Atividade 3']/preceding-sibling::input[@data-testid='todo-item-toggle']",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;if(el){el.click();}
+Without any arguments.</msg>
+<arg>var el=document.evaluate("${xpath}",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;if(el){el.click();}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.471100" elapsed="0.019033"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Checkbox da tarefa "${item_text}" marcado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.490664" elapsed="0.000693"/>
+</kw>
+<arg>Atividade 3</arg>
+<doc>Marca o checkbox de uma tarefa pelo seu texto.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.437221" elapsed="0.054383"/>
+</kw>
+<kw name="Delete Item" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:02.493725" level="INFO">${locator} = xpath=//label[normalize-space()='Atividade 3']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_CHECKBOX_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.493060" elapsed="0.000785"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:02.494840" level="INFO">${delete_locator} = xpath=//label[@data-testid="todo-item-label" and normalize-space()="Atividade 3"]/following-sibling::button[@data-testid="todo-item-button"]</msg>
+<var>${delete_locator}</var>
+<arg>${BUTTON_DELETE_TASK}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.494175" elapsed="0.000786"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:02.495891" level="INFO">Simulating Mouse Over on element 'xpath=//label[normalize-space()='Atividade 3']/preceding-sibling::input[@data-testid='todo-item-toggle']'.</msg>
+<arg>${locator}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.495340" elapsed="0.289665"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:02.786189" level="INFO">Clicking element 'xpath=//label[@data-testid="todo-item-label" and normalize-space()="Atividade 3"]/following-sibling::button[@data-testid="todo-item-button"]'.</msg>
+<arg>${delete_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.785530" elapsed="0.120445"/>
+</kw>
+<arg>Atividade 3</arg>
+<doc>Excluir uma tarefa pelo texto.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.492216" elapsed="0.414098"/>
+</kw>
+<kw name="Filter Todos By Status" owner="TodoSiteKeywords">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'All'</arg>
+<arg>Click Element</arg>
+<arg>${FILTER_ALL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.907728" elapsed="0.000458"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'Active'</arg>
+<arg>Click Element</arg>
+<arg>${FILTER_ACTIVE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.908535" elapsed="0.000405"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:02.910748" level="INFO">Clicking element 'xpath=//ul[@data-testid='footer-navigation']//a[text()='Completed']'.</msg>
+<arg>${FILTER_COMPLETED}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.909916" elapsed="0.154982"/>
+</kw>
+<arg>'${status}' == 'Completed'</arg>
+<arg>Click Element</arg>
+<arg>${FILTER_COMPLETED}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.909372" elapsed="0.156006"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Filtrado por: ${status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.065931" elapsed="0.000735"/>
+</kw>
+<arg>Completed</arg>
+<doc>Filtra as tarefas pelo status: All, Active ou Completed.</doc>
+<status status="PASS" start="2025-11-13T23:17:02.906929" elapsed="0.160015"/>
+</kw>
+<kw name="Assert Quantity Item Left" owner="TodoSiteKeywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-13T23:17:03.069703" level="INFO">${locator} = xpath=//span[@class='todo-count']</msg>
+<var>${locator}</var>
+<arg>${TODO_COUNT}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.068775" elapsed="0.001120"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.070395" elapsed="0.048788"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:03.162890" level="INFO">${actual_text} = 3 items left!</msg>
+<var>${actual_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.119850" elapsed="0.043173"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2025-11-13T23:17:03.165079" level="INFO">${actual_num} = 3 items left!</msg>
+<var>${actual_num}</var>
+<arg>${actual_text}</arg>
+<arg>\D</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.163502" elapsed="0.001726"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2025-11-13T23:17:03.167207" level="INFO">${expected_num} = 3 items left!</msg>
+<var>${expected_num}</var>
+<arg>${item_left}</arg>
+<arg>\D</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.165692" elapsed="0.001631"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_num}</arg>
+<arg>${expected_num}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.167737" elapsed="0.000675"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: ${actual_num} items left == ${expected_num}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.168788" elapsed="0.000891"/>
+</kw>
+<arg>3 items left!</arg>
+<doc>Verifica a quantidade de itens restantes.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.067689" elapsed="0.102239"/>
+</kw>
+<kw name="Assert Todo Items Are Not Visible" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:03.173738" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 1']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.173117" elapsed="0.000710"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.174158" elapsed="0.027037"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:03.215705" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 1']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.201853" elapsed="0.014112"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.216432" elapsed="0.000598"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.172427" elapsed="0.044919"/>
+</kw>
+<var name="${item_text}">Atividade 1</var>
+<status status="PASS" start="2025-11-13T23:17:03.171986" elapsed="0.045533"/>
+</iter>
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:03.219687" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 2']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.219047" elapsed="0.000765"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.220361" elapsed="0.025863"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:03.263552" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 2']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.246913" elapsed="0.016906"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.264294" elapsed="0.000622"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.218282" elapsed="0.046917"/>
+</kw>
+<var name="${item_text}">Atividade 2</var>
+<status status="PASS" start="2025-11-13T23:17:03.217828" elapsed="0.047585"/>
+</iter>
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:03.267396" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 3']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.266849" elapsed="0.000624"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.267783" elapsed="0.024959"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:03.308351" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 3']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.293712" elapsed="0.014891"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.309026" elapsed="0.000608"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.266073" elapsed="0.043772"/>
+</kw>
+<var name="${item_text}">Atividade 3</var>
+<status status="PASS" start="2025-11-13T23:17:03.265696" elapsed="0.044271"/>
+</iter>
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:03.312166" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 4']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.311489" elapsed="0.000776"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.312596" elapsed="0.027081"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:03.356242" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 4']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.340381" elapsed="0.016128"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.356949" elapsed="0.000625"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.310706" elapsed="0.047083"/>
+</kw>
+<var name="${item_text}">Atividade 4</var>
+<status status="PASS" start="2025-11-13T23:17:03.310300" elapsed="0.047610"/>
+</iter>
+<var>${item_text}</var>
+<value>@{item_texts}</value>
+<status status="PASS" start="2025-11-13T23:17:03.171582" elapsed="0.186453"/>
+</for>
+<arg>Atividade 1</arg>
+<arg>Atividade 2</arg>
+<arg>Atividade 3</arg>
+<arg>Atividade 4</arg>
+<doc>Verifica se NENHUM dos itens de tarefa na lista está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.170830" elapsed="0.187399"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.358874" elapsed="0.060905"/>
+</kw>
+<status status="PASS" start="2025-11-13T23:16:58.192887" elapsed="5.227438"/>
+</test>
+<test id="s1-t3" name="Cenário 3: Adicionar, marcar e limpar as tarefas concluidas" line="27">
+<kw name="Open Browser To Todo Site" owner="TodoSiteKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:03.425586" level="INFO">Opening browser 'chrome' to base url 'http://todomvc.com/examples/react/dist/#/'.</msg>
+<arg>${TODO_SITE_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--remote-debugging-port=9222");add_argument("--disable-gpu");add_argument("--headless=new")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-13T23:17:03.424847" elapsed="2.179847"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-13T23:17:05.605226" elapsed="0.019771"/>
+</kw>
+<doc>Abrir o navegador e acessar a url do site To-Do</doc>
+<status status="PASS" start="2025-11-13T23:17:03.423432" elapsed="2.201910"/>
+</kw>
+<kw name="Add Multiple Todo Items" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:05.628590" elapsed="0.054783"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:05.684777" level="INFO">Typing text 'Atividade 1' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:05.683983" elapsed="0.158338"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:05.843809" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:06.217172" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:06.217486" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:05.842824" elapsed="0.436878"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:05.627794" elapsed="0.652279"/>
+</kw>
+<var name="${item}">Atividade 1</var>
+<status status="PASS" start="2025-11-13T23:17:05.627398" elapsed="0.652825"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.281976" elapsed="0.025964"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:06.309139" level="INFO">Typing text 'Atividade 2' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.308419" elapsed="0.101018"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:06.410871" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:06.703404" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:06.703656" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.409937" elapsed="0.313674"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.281074" elapsed="0.442893"/>
+</kw>
+<var name="${item}">Atividade 2</var>
+<status status="PASS" start="2025-11-13T23:17:06.280599" elapsed="0.443526"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.726108" elapsed="0.025485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:06.753095" level="INFO">Typing text 'Atividade 3' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.752312" elapsed="0.109214"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:06.862990" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:07.153454" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:07.153694" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.862008" elapsed="0.308509"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:06.725112" elapsed="0.445748"/>
+</kw>
+<var name="${item}">Atividade 3</var>
+<status status="PASS" start="2025-11-13T23:17:06.724570" elapsed="0.446440"/>
+</iter>
+<iter>
+<kw name="Add Todo Item" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.172919" elapsed="0.026647"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:07.200806" level="INFO">Typing text 'Atividade 4' into text field 'xpath=//input[@data-testid='text-input']'.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${item_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.200064" elapsed="0.105581"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:07.307242" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@data-testid='text-input'] element.</msg>
+<msg time="2025-11-13T23:17:07.603909" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-11-13T23:17:07.604136" level="INFO">Releasing special key ENTER.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.306206" elapsed="0.314261"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adiciona um item de tarefa na lista pelo texto fornecido.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.171930" elapsed="0.448873"/>
+</kw>
+<var name="${item}">Atividade 4</var>
+<status status="PASS" start="2025-11-13T23:17:07.171406" elapsed="0.449541"/>
+</iter>
+<var>${item}</var>
+<value>@{items}</value>
+<status status="PASS" start="2025-11-13T23:17:05.626936" elapsed="1.994157"/>
+</for>
+<arg>Atividade 1</arg>
+<arg>Atividade 2</arg>
+<arg>Atividade 3</arg>
+<arg>Atividade 4</arg>
+<doc>Adiciona múltiplos itens de tarefa na lista.</doc>
+<status status="PASS" start="2025-11-13T23:17:05.626117" elapsed="1.995227"/>
+</kw>
+<kw name="Check Todo Item" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:07.623690" level="INFO">${locator} = xpath=//label[normalize-space()='Atividade 4']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_CHECKBOX_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.622977" elapsed="0.000799"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:07.625537" level="INFO">${xpath} = //label[normalize-space()='Atividade 4']/preceding-sibling::input[@data-testid='todo-item-toggle']</msg>
+<var>${xpath}</var>
+<arg>${locator}</arg>
+<arg>xpath=</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.624099" elapsed="0.001526"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.625972" elapsed="0.026705"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:07.654851" level="INFO">Executing JavaScript:
+var el=document.evaluate("//label[normalize-space()='Atividade 4']/preceding-sibling::input[@data-testid='todo-item-toggle']",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;if(el){el.click();}
+Without any arguments.</msg>
+<arg>var el=document.evaluate("${xpath}",document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;if(el){el.click();}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.653380" elapsed="0.019702"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Checkbox da tarefa "${item_text}" marcado.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.673646" elapsed="0.000624"/>
+</kw>
+<arg>Atividade 4</arg>
+<doc>Marca o checkbox de uma tarefa pelo seu texto.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.622073" elapsed="0.052424"/>
+</kw>
+<kw name="Click Button Clear Completed" owner="TodoSiteKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CLEAR_COMPLETED}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.675732" elapsed="0.045471"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:07.722914" level="INFO">Clicking element 'xpath=//footer[@data-testid='footer']//button[@class='clear-completed']'.</msg>
+<arg>${BUTTON_CLEAR_COMPLETED}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.721931" elapsed="0.119438"/>
+</kw>
+<doc>Clica no botão "Clear completed" para limpar as tarefas concluídas</doc>
+<status status="PASS" start="2025-11-13T23:17:07.675052" elapsed="0.166641"/>
+</kw>
+<kw name="Assert Quantity Item Left" owner="TodoSiteKeywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-13T23:17:07.843645" level="INFO">${locator} = xpath=//span[@class='todo-count']</msg>
+<var>${locator}</var>
+<arg>${TODO_COUNT}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.843127" elapsed="0.000602"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.844068" elapsed="0.047695"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:07.931879" level="INFO">${actual_text} = 3 items left!</msg>
+<var>${actual_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.892284" elapsed="0.039715"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2025-11-13T23:17:07.933795" level="INFO">${actual_num} = 3 items left!</msg>
+<var>${actual_num}</var>
+<arg>${actual_text}</arg>
+<arg>\D</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.932426" elapsed="0.001448"/>
+</kw>
+<kw name="Replace String Using Regexp" owner="String">
+<msg time="2025-11-13T23:17:07.935540" level="INFO">${expected_num} = 3 items left!</msg>
+<var>${expected_num}</var>
+<arg>${item_left}</arg>
+<arg>\D</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``pattern`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.934182" elapsed="0.001550"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_num}</arg>
+<arg>${expected_num}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.936187" elapsed="0.000602"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: ${actual_num} items left == ${expected_num}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.937104" elapsed="0.000702"/>
+</kw>
+<arg>3 items left!</arg>
+<doc>Verifica a quantidade de itens restantes.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.842349" elapsed="0.095658"/>
+</kw>
+<kw name="Assert Todo Items Are Visible" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Assert Todo Item Is Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:07.941100" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 1']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.940593" elapsed="0.000586"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.941487" elapsed="0.042668"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:08.010021" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 1']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.984692" elapsed="0.025608"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.010778" elapsed="0.000685"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.939953" elapsed="0.071793"/>
+</kw>
+<var name="${item_text}">Atividade 1</var>
+<status status="PASS" start="2025-11-13T23:17:07.939618" elapsed="0.072315"/>
+</iter>
+<iter>
+<kw name="Assert Todo Item Is Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:08.015213" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 2']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.014556" elapsed="0.000763"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.015666" elapsed="0.042076"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:08.081628" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 2']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.058241" elapsed="0.023654"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.082370" elapsed="0.000636"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.013158" elapsed="0.070062"/>
+</kw>
+<var name="${item_text}">Atividade 2</var>
+<status status="PASS" start="2025-11-13T23:17:08.012454" elapsed="0.070911"/>
+</iter>
+<iter>
+<kw name="Assert Todo Item Is Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:08.085506" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 3']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.084886" elapsed="0.000728"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.085938" elapsed="0.040474"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:08.151451" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 3']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.126926" elapsed="0.024767"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.152135" elapsed="0.000690"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.084094" elapsed="0.068974"/>
+</kw>
+<var name="${item_text}">Atividade 3</var>
+<status status="PASS" start="2025-11-13T23:17:08.083658" elapsed="0.069651"/>
+</iter>
+<var>${item_text}</var>
+<value>@{item_texts}</value>
+<status status="PASS" start="2025-11-13T23:17:07.939198" elapsed="0.214266"/>
+</for>
+<arg>Atividade 1</arg>
+<arg>Atividade 2</arg>
+<arg>Atividade 3</arg>
+<doc>Verifica se TODOS os itens de tarefa na lista estão visíveis na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:07.938577" elapsed="0.215113"/>
+</kw>
+<kw name="Assert Todo Items Are Not Visible" owner="TodoSiteKeywords">
+<for flavor="IN">
+<iter>
+<kw name="Assert Todo Item Is Not Visible" owner="TodoSiteKeywords">
+<kw name="Replace String" owner="String">
+<msg time="2025-11-13T23:17:08.157299" level="INFO">${locator} = xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 4']</msg>
+<var>${locator}</var>
+<arg>${TODO_ITEM_LABEL_BY_TEXT}</arg>
+<arg>{item}</arg>
+<arg>${item_text}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.156690" elapsed="0.000698"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.157730" elapsed="0.028720"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-13T23:17:08.203525" level="INFO">Element 'xpath=//label[@data-testid='todo-item-label' and normalize-space()='Atividade 4']' did not exist.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.187069" elapsed="0.016743"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verificado: Item "${item_text}" não está visível.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.204296" elapsed="0.000682"/>
+</kw>
+<arg>${item_text}</arg>
+<doc>Verifica se um item de tarefa com o texto especificado NÃO está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.155895" elapsed="0.049502"/>
+</kw>
+<var name="${item_text}">Atividade 4</var>
+<status status="PASS" start="2025-11-13T23:17:08.155457" elapsed="0.050145"/>
+</iter>
+<var>${item_text}</var>
+<value>@{item_texts}</value>
+<status status="PASS" start="2025-11-13T23:17:08.155049" elapsed="0.050727"/>
+</for>
+<arg>Atividade 4</arg>
+<doc>Verifica se NENHUM dos itens de tarefa na lista está visível na página.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.154435" elapsed="0.051568"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-13T23:17:08.206851" elapsed="0.057998"/>
+</kw>
+<status status="PASS" start="2025-11-13T23:17:03.421621" elapsed="4.843653"/>
+</test>
+<status status="PASS" start="2025-11-13T23:16:50.780150" elapsed="17.486432"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TodoSiteTests" id="s1" pass="3" fail="0" skip="0">TodoSiteTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
